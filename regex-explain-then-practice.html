@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NLP & Regex – Full Guide with Solved Sheet</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --card: #f4f6fb;
+  --text: #111111;
+  --muted: #555555;
+  --accent: #003366;
+  --accent2: #0a7a3d;
+  --border: #d0d7e2;
+  --code: #eef1f7;
+}
+
+* { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+
+body {
+  margin: 0;
+  padding: 50px;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+h1 { font-size: 3rem; color: var(--accent); }
+h2 { margin-top: 80px; color: var(--accent); font-size: 2rem; }
+h3 { margin-top: 40px; color: var(--accent2); font-size: 1.4rem; }
+
+.section {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  margin: 40px 0;
+}
+
+pre {
+  background: var(--code);
+  padding: 22px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 19px;
+}
+
+details {
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.note { color: var(--muted); font-size: 18px; }
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+
+<h1>NLP & Regular Expressions</h1>
+
+<h2>1. What is Natural Language Processing (NLP)?</h2>
+<div class="section">
+<p>
+Natural Language Processing (NLP) is a field of Artificial Intelligence that focuses on enabling computers
+to understand, analyze, and work with human language. Human language is messy, ambiguous, and inconsistent.
+Computers are not.
+</p>
+
+<p>
+NLP exists to bridge this gap. It allows machines to process text data such as emails, social media posts,
+search queries, logs, and documents.
+</p>
+
+<p>
+Before advanced models or machine learning can be applied, raw text must be cleaned and structured.
+This is where regular expressions become essential.
+</p>
+</div>
+
+<h2>2. What is a Regular Expression?</h2>
+<div class="section">
+<p>
+A regular expression (regex) is a pattern that describes a set of strings. Instead of checking text character
+by character manually, regex allows you to describe what valid text looks like using a compact syntax.
+</p>
+
+<p>
+Regex is used heavily in NLP for text cleaning, pattern extraction, validation, and normalization.
+</p>
+
+<p>
+Regex does not understand meaning. It understands patterns.
+</p>
+</div>
+
+<h2>3. How Regex Thinks</h2>
+<div class="section">
+<p>
+Regex works on characters, not values. Numeric ranges must be expressed as character patterns rather than
+mathematical intervals.
+</p>
+</div>
+
+<h2>4. Literal Characters & Basic Operators</h2>
+<div class="section">
+<h3>Literal characters</h3>
+<pre>a</pre>
+
+<h3>Dot (.)</h3>
+<pre>.</pre>
+
+<h3>Alternation |</h3>
+<pre>cat|dog</pre>
+
+<h3>Escaping</h3>
+<pre>\.</pre>
+
+<div class="exercise">
+<strong>Exercises</strong>
+<ol>
+<li>Match the word <code>hello</code>.</li>
+<li>Match either <code>yes</code> or <code>no</code>.</li>
+<li>Match a literal question mark.</li>
+</ol>
+</div>
+</div>
+
+<h2>5. Quantifiers</h2>
+<div class="section">
+<pre>a*
+a+
+a?
+a{2}
+a{2,5}
+a{2,}</pre>
+
+<div class="exercise">
+<strong>Exercises</strong>
+<ol>
+<li>Match exactly 3 digits.</li>
+<li>Match a plural word.</li>
+<li>Match numbers with at least 2 digits.</li>
+</ol>
+</div>
+</div>
+
+<h2>6. Character Classes</h2>
+<div class="section">
+<pre>[abc]
+[a-z]
+[^0-9]
+
+\d
+\w
+\s</pre>
+
+<div class="exercise">
+<strong>Exercises</strong>
+<ol>
+<li>Match any vowel.</li>
+<li>Match any non-digit.</li>
+<li>Match letters and underscores only.</li>
+</ol>
+</div>
+</div>
+
+<h2>7. Groups & Backreferences</h2>
+<div class="section">
+<pre>(ab)+
+\b(\w+) \1\b</pre>
+
+<div class="exercise">
+<strong>Exercises</strong>
+<ol>
+<li>Match duplicated words.</li>
+<li>Capture first and last names.</li>
+</ol>
+</div>
+</div>
+
+<h2>8. Anchors</h2>
+<div class="section">
+<pre>^Hello
+world$</pre>
+
+<div class="exercise">
+<strong>Exercises</strong>
+<ol>
+<li>Match lines starting with a capital letter.</li>
+<li>Match lines ending with a number.</li>
+</ol>
+</div>
+</div>
+
+<h2>Regex Practice Sheet – With Hidden Answers</h2>
+
+<div class="section">
+
+<h3>1. Shortest Regex</h3>
+
+<p>a) Match any single digit from 0 to 9.</p>
+<details><summary>Show Answer</summary><pre>\d</pre></details>
+
+<p>b) Match any character that is NOT a digit.</p>
+<details><summary>Show Answer</summary><pre>\D</pre></details>
+
+<p>c) Match the word Data only if it appears at the very beginning.</p>
+<details><summary>Show Answer</summary><pre>^Data</pre></details>
+
+<p>d) Match the word End only if it appears at the very end.</p>
+<details><summary>Show Answer</summary><pre>End$</pre></details>
+
+<p>e) Match any lowercase vowel.</p>
+<details><summary>Show Answer</summary><pre>[aeiou]</pre></details>
+
+</div>
+
+<div class="section">
+<h3>2. Regex Languages (Perl-style)</h3>
+
+<p>a) All alphabetic strings.</p>
+<details><summary>Show Answer</summary><pre>[A-Za-z]+</pre></details>
+
+<p>b) Lowercase alphabetic strings ending in b.</p>
+<details><summary>Show Answer</summary><pre>[a-z]*b</pre></details>
+
+<p>c) Two consecutive repeated words.</p>
+<details><summary>Show Answer</summary><pre>\b(\w+)\s+\1\b</pre></details>
+
+<p>d) Strings over {a,b} where each a is surrounded by b.</p>
+<details><summary>Show Answer</summary><pre>^(b|bab)+$</pre></details>
+
+<p>e) Start with integer, end with a word.</p>
+<details><summary>Show Answer</summary><pre>^\d+\s+\w+$</pre></details>
+
+<p>f) Contains both grotto and raven.</p>
+<details><summary>Show Answer</summary><pre>\b(grotto\b.*\braven|raven\b.*\bgrotto)\b</pre></details>
+
+<p>g) Capture the first word of a sentence.</p>
+<details><summary>Show Answer</summary><pre>^\s*([A-Za-z]+)</pre></details>
+</div>
+
+<div class="section">
+<h3>3–17. Mixed Regex Tasks</h3>
+
+<p>3) Only 0s and 1s.</p>
+<details><summary>Show Answer</summary><pre>^[01]+$</pre></details>
+
+<p>4) Valid Python variable.</p>
+<details><summary>Show Answer</summary><pre>^[A-Za-z_][A-Za-z0-9_]*$</pre></details>
+
+<p>5) CSS hex color.</p>
+<details><summary>Show Answer</summary><pre>^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$</pre></details>
+
+<p>6) Any variation of haha.</p>
+<details><summary>Show Answer</summary><pre>^(ha)+$</pre></details>
+
+<p>7) Color / Colour.</p>
+<details><summary>Show Answer</summary><pre>Colou?r</pre></details>
+
+<p>8) US phone number.</p>
+<details><summary>Show Answer</summary><pre>^\(\d{3}\) \d{3}-\d{4}$</pre></details>
+
+<p>9) Twitter handle.</p>
+<details><summary>Show Answer</summary><pre>^@[A-Za-z0-9_]{1,15}$</pre></details>
+
+<p>10) Dollar price.</p>
+<details><summary>Show Answer</summary><pre>^\$\d+(\.\d{2})?$</pre></details>
+
+<p>11) Date DD/MM/YYYY.</p>
+<details><summary>Show Answer</summary><pre>^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$</pre></details>
+
+<p>12) Entire HTML tag.</p>
+<details><summary>Show Answer</summary><pre><[^>]+></pre></details>
+
+<p>13) Email address.</p>
+<details><summary>Show Answer</summary><pre>^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$</pre></details>
+
+<p>14) Repeated word.</p>
+<details><summary>Show Answer</summary><pre>\b(\w+)\s+\1\b</pre></details>
+
+<p>15) 8–16 chars with at least one number.</p>
+<details><summary>Show Answer</summary><pre>^(?=.*\d).{8,16}$</pre></details>
+
+<p>16) Extract word in brackets.</p>
+<details><summary>Show Answer</summary><pre>\[(\w+)\]</pre></details>
+
+<p>17) Two or more spaces.</p>
+<details><summary>Show Answer</summary><pre>\s{2,}</pre></details>
+
+</div>
+
+</body>
+</html>
